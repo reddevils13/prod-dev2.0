@@ -1,0 +1,10 @@
+springdata:
+  cassandra:
+    keyspace-name: inventory
+spring:
+  data:
+    cassandra:
+      contact-points: 127.0.0.1
+      port: 9041
+server:
+  port: 8081

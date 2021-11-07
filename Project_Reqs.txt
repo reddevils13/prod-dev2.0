@@ -1,0 +1,44 @@
+General Guidance :
+	1. Preferably Use Java based frameworks (Springboot, Vert.x) etc.. for developing the services
+	2. Please explore tools in https://vox.publicissapient.com/home/dojo-tools and try to use these. 
+	If you aren't able to let's discuss and explore other tools like GitLab
+	3. The teams are free to use DB of their choice, but it has to be accompanied by some artefacts/rationale on why a particular DB was chosen.
+	4. UI can be either using Angular or React, ReactNative
+		
+Catalog Service :
+   Features (Must Have):
+	This service can be created using an
+	1. Ability to add a product. 
+		The product details should include Product ID, Product Description, Item Attributes (Dimensions, weight etc..), Price Details. Can optionally include Item Images 
+	2. Ability to Update a Product (based on Product ID)
+	3. Ability to query a list of products based on criteria (GraphQL support (via queries) is nice to have)
+	4. Ability to query a single product based on ID (GraphQL support (via queries is nice to have)
+	5. Support for REST APIs (GraphQL support (via mutation) is nice to have)
+	6. A UI application to manage and view products
+	7. Integration Requirements: Catalog Service should publish an event on successful creation of a product
+    Features (Nice to Have)
+	1. Ability to define new categories and add products to categories
+		Category hierarchy should be supported. One category could have one or multiple child categories
+	2. Include Inventory Availability from the Inventory Service in the product details page
+
+
+Inventory Service:
+	1. Ability to define one or more ShipNodes/ Fulfillment Locations/ Sources
+	2. Ability to define OnHand Supply for Items
+	3. Ability to define reservation for Items
+	4. Ability to query Inventory availability (Supply - Reservations) for One or More Items and optionally shipNodes. 
+		The output can return inventory from one or more Locations
+	5. Integration Requirements: Order Service to be able to add reservation
+     Features (Nice to Have)
+	1. Abiltity to maintain Cache and fetch from Cache for Availability
+
+Order Service:
+	1. Ability to create a new Order. 
+		The Order details should include List of Products, Order's Shipping Address, Order's Billing Address, Payment Information for the Order.
+	2. Ability to Update an Order (based on Order ID)
+	3. Ability to query a list of orders based on criteria 
+	4. Ability to query a single order] based on ID 
+	5. Support for REST APIs 
+	6. A UI application to manage and view orders
+
+  
